@@ -1,0 +1,167 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  width: 700px;
+  height: 100vh;
+  position: relative;
+  background-color: white;
+  font-size: 15px;
+}
+
+#container>h1 {
+  text-align: center;
+}
+
+#des {
+  width: 100%;
+  height: 60px;
+  border: 2px solid dimgrey;
+  border-radius: 5px;
+}
+
+#cat {
+  width: 50%;
+  height: 60px;
+  border: 2px solid dimgrey;
+  border-radius: 5px;
+}
+
+#date {
+  width: 50%;
+  height: 60px;
+  border: 2px solid dimgrey;
+  border-radius: 5px;
+  position: absolute;
+  right: 0px;
+  top: 94px;
+}
+
+input[type="text"],
+select,
+input[type="datetime-local"] {
+  width: 100%;
+  border: none;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+button[type="submit"],
+button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  position: absolute;
+  width: 200px;
+}
+
+#delete button[type="submit"] {
+  left: 355px;
+  height: 45px;
+  background-color: rgb(255, 68, 0);
+}
+
+#create button[type="submit"] {
+  left: 145px;
+  height: 45px;
+  background-color: #007bff;
+}
+
+#all_list {
+  position: relative;
+  width: 100%;
+  top: 65px;
+  height: calc(100% - 220px);
+  padding: 5px;
+  overflow-y: scroll;
+}
+
+#all_list::-webkit-scrollbar {
+  display: none;
+}
+
+#all_list>.list>div {
+  margin: 5px;
+  width: calc(100% - 10px);
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(212, 211, 211);
+  border-radius: 5px;
+}
+
+#all_list>.list>div>.checkBox {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+#all_list>.list>div>.details {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: -90px;
+  line-height: 9px;
+}
+
+#all_list>.list>div>.catgry {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+}
+
+.Work {
+  background-color: coral;
+}
+
+.Personal {
+  background-color: blueviolet;
+}
+
+.School {
+  background-color: rgb(19, 176, 229);
+}
+
+.Cleaning {
+  background-color: forestgreen;
+}
+
+.Other {
+  background-color: #007bff;
+}

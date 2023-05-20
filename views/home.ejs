@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>TODO App</h1>
+
+            <form action="/create-task" method="POST" id="create">
+
+                <div id="des">
+                    <label for="description">DESCRIPTION</label>
+                    <input type="text" id="description" name="description" placeholder="add a task">
+                </div>
+
+                <div id="cat">
+                    <label for="category">CATEGORY</label>
+                    <select id="category" name="category">
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div id="date">
+                    <label for="datetime">DUE DATE</label>
+                    <input type="datetime-local" id="datetime" name="datetime">
+                </div>
+
+                <button type="submit"><i class="bi bi-plus-lg"></i> ADD TASK</button>
+            </form>
+
+            <!-- list and delete, i place all list inside a form , so that it can easily be delete-->
+            <form action="/delete-task" method="POST" id="delete">
+                <button type="submit"><i class="bi bi-trash"></i> DELETE TASKS</button>
+
+                <ul id="all_list">
+                    <% for (let i of todo_list) { %>
+                        <li class="list">
+                            <div>
+                                <div class="checkBox"><input type="checkbox" name="<%= i._id %>">
+                                </div>
+                                <div class="details">
+                                    <h4>
+                                        <%= i.description %>
+                                    </h4>
+                                    <br>
+                                    <%= i.datetime %>
+                                </div>
+                                <div class="catgry <%= i.category %>">
+                                    <%= i.category %>
+                                </div>
+                            </div>
+                        </li>
+                        <% } %>
+                </ul>
+            </form>
+        </div>
+    </body>
+
+</html>
